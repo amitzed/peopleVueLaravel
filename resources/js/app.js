@@ -1,34 +1,43 @@
-
-
 require('./bootstrap');
 
 window.Vue = require('vue');
 
-window.VueRouter=require('vue-router').default;
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
 
-window.VueAxios=require('vue-axios').default;
+import VueAxios from 'vue-axios';
+import axios from 'axios';
 
-window.Axios=require('axios').default;
+import App from './App.vue';
+Vue.use(VueAxios, axios);
 
-let AppLayout= require('./components/App.vue');
+import Home from './components/Home.vue';
+import Create from './components/Create.vue';
+import Index from './components/Index.vue';
+import Edit from './components/Edit.vue';
 
-
-/* Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-
-const app = new Vue({
-    el: '#app'
-}); */
-
-// Registering Modules
-Vue.use(VueRouter,VueAxios, axios);
-
+const routes = [
+  {
+      name: 'home',
+      path: '/',
+      component: Home
+  },
+  {
+      name: 'create',
+      path: '/create',
+      component: Create
+  },
+  {
+      name: 'posts',
+      path: '/posts',
+      component: Index
+  },
+  {
+      name: 'edit',
+      path: '/edit/:id',
+      component: Edit
+  }
+];
 
 const router = new VueRouter({ mode: 'history', routes: routes});
-
-new Vue(
-  Vue.util.extend(
-    { router },
-    AppLayout
-  )
-).$mount('#app');
+const app = new Vue(Vue.util.extend({ router }, App)).$mount('#app');
