@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="create-page">
     <h1>Create Data</h1>
     <form @submit.prevent="addPost">
 
@@ -7,7 +7,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>First Name:</label>
-            <input type="text" class="form-control" v-model="post.first_name">
+            <input type="text" class="form-control" v-model="post.first_name" required>
           </div>
         </div>
         </div>
@@ -16,7 +16,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Last Name:</label>
-            <input type="text" class="form-control" v-model="post.last_name">
+            <input type="text" class="form-control" v-model="post.last_name" required>
           </div>
         </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Age:</label>
-            <input type="number" class="form-control" v-model="post.age">
+            <input type="number" class="form-control" v-model="post.age" required>
           </div>
         </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Email:</label>
-            <input type="email" class="form-control" v-model="post.email">
+            <input type="email" class="form-control" v-model="post.email" required>
           </div>
         </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <label>Secret:</label>
-            <input type="text" class="form-control" v-model="post.secret">
+            <input type="text" class="form-control" v-model="post.secret" required>
           </div>
         </div>
         </div>
@@ -56,6 +56,14 @@
   </div>
 </template>
 
+<style media="screen">
+  .create-page {
+    font-family: 'Raleway', sans-serif;
+  }
+  div .col-xs-3 {
+    text-align: center;
+  }
+</style>
 <script>
     export default {
         data(){

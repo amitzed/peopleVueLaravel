@@ -1,3 +1,26 @@
+## Vue-Laravel/PHP || Front-end and Back-end
+
+#### Set to PORT 8889 -> Please see .env file for MySQL DB info -> php artisan serve
+## Routes:
+#### [localhost:8000](http://localhost:8000/)
+#### [localhost:8000/posts](http://localhost:8000/posts)
+#### [localhost:8000/posts/create](http://localhost:8000/posts/create)
+
+<p align="center">
+  <img src="public/images/home.png" width="500" title="hover text">
+</p>
+<p align="center">
+  <img src="public/images/dataList.png" width="650" title="hover text">
+</p>
+<p align="center">
+  <img src="public/images/create.png" width="250" title="hover text">
+
+  <img src="public/images/edit.png" width="250" title="hover text">
+
+  <img src="public/images/mySQL.png" width="250" title="hover text">
+</p>
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
