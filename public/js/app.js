@@ -2082,6 +2082,16 @@ __webpack_require__.r(__webpack_exports__);
     this.axios.get(uri).then(function (response) {
       _this.posts = response.data.data;
     });
+  },
+  methods: {
+    deletePost: function deletePost(id) {
+      var _this2 = this;
+
+      var uri = "http://localhost:8000/api/post/delete/".concat(id);
+      this.axios.delete(uri).then(function (response) {
+        _this2.posts.splice(_this2.posts.indexOf(id), 1);
+      });
+    }
   }
 });
 
@@ -38370,7 +38380,21 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _vm._m(1, true)
+            _c("td", [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-danger",
+                  on: {
+                    click: function($event) {
+                      $event.preventDefault()
+                      return _vm.deletePost(post.id)
+                    }
+                  }
+                },
+                [_vm._v("X")]
+              )
+            ])
           ])
         }),
         0
@@ -38397,14 +38421,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("th", [_vm._v("Actions")])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("td", [
-      _c("button", { staticClass: "btn btn-danger" }, [_vm._v("X")])
     ])
   }
 ]
